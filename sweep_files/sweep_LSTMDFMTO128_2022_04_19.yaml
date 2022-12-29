@@ -1,0 +1,75 @@
+program: "/content/deep_rppg/main.py"
+method: "bayes"
+parameters:
+  dataset_percentage:
+    distribution: constant
+    value: 1 
+  fold:
+    distribution: constant
+    value: 0
+  epochs:
+    distribution: categorical
+    values: [10,50,100,150]     
+  loss:
+    distribution: constant
+    value: MSE       
+  learning_rate:
+    distribution: uniform
+    max: 0.01
+    min: 0.00001  
+  lambda_loss:
+    distribution: constant
+    value: 1
+  is_SWEEP:
+    distribution: constant
+    value: 1
+  is_reproducible:
+    distribution: constant
+    value: 1
+  load_dataset_path:
+    distribution: constant
+    value: /content/drive/MyDrive/Deivid/VIPL/Experiments/RTrPPG
+  save_path:
+    distribution: constant
+    value: E:/results/VIPL/test_dataset
+  database_name:
+    distribution: constant
+    value: VIPL    
+  save_model_each_n_epochs:
+    distribution: constant
+    value: 0  
+  lstm_state:
+    distribution: constant
+    value: stateful
+  optimizer:
+    distribution: constant
+    value: ADAM
+  metric:
+    distribution: constant
+    value: hrmae
+  network:
+    distribution: constant
+    value: LSTMDFMTO128        
+  batch_size:
+    distribution: constant
+    value: 32 
+  window:
+    distribution: constant
+    value: 128 
+  step_tr:
+    distribution: constant
+    value: 128     
+  step_eval:
+    distribution: constant
+    value: 1      
+name: "HT_LSTMDFMTO128_RTRPPG"
+description: "HT in LSTMDFMTO128 from RTRPPG signals"
+metric:
+  goal: "minimize"
+  name: "val/hrmae"
+  target: 0
+project: "sweeps"  
+#early_terminate:
+#  type: hyperband
+#  min_iter:10
+#  eta: 2

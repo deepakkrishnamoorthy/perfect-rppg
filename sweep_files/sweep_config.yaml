@@ -1,0 +1,125 @@
+program: "main.py"
+method: "bayes"
+metric:
+  goal: "minimize"
+  name: "val/hrmae"
+  target: 0
+project: "sweeps"
+name: "HT_NPNSNR_stepeval1"
+description: "Testing sweep parameters"
+ 
+parameters:
+  fold:
+    distribution: constant
+    value: -1
+  is_SWEEP:
+    distribution: constant
+    value: 1
+  in_COLAB:
+    distribution: constant
+    value: 0
+  project_name:
+    distribution: constant
+    value: "sweeps"
+  run_name:
+    distribution: constant
+    value: "sweep_debug"
+  run_id:
+    distribution: constant
+    value:  
+  is_resume:
+    distribution: constant
+    value: 0
+  load_dataset_path:
+    distribution: constant
+    value: J:\\faces\\8_8\\synchronized\\VIPL_npy\\MediapipeFromFascascade
+  save_path:
+    distribution: constant
+    value: E:\\results\\VIPL\\test_dataset
+  is_reproducible:
+    distribution: constant
+    value: 1
+  seed:
+    distribution: constant
+    value: 10  
+  dataset_percentage:
+    distribution: constant
+    value: 1  
+  save_model_each_n_epochs:
+    distribution: constant
+    value: 0
+  is_5050_validation:
+    distribution: constant
+    value: 0    
+  use_data_augmentation:
+    distribution: constant
+    value: 0  
+  hard_attention: 
+    distribution: constant
+    value: 0
+  is_RGBYUV: 
+    distribution: constant
+    value: 0    
+  is_prediction:
+    distribution: constant
+    value: 0 
+  overwrite_prediction:
+    distribution: constant
+    value: 0 
+  use_these_weights:
+    distribution: constant
+    value: "best" 
+  predict_without_training:
+    distribution: constant
+    value: 0 
+  save_subjects_metadata: # int 0,1, 2?
+    distribution: constant
+    value: 0
+  save_first_shuffle_metadata:
+    distribution: constant
+    value: 0             
+  only_save_train_test_metadata_current_fold:
+    distribution: constant
+    value: 0
+  only_data_manager:
+    distribution: constant
+    value: 0
+  database_name:
+    distribution: constant
+    value: "VIPL"        
+  epochs:
+    distribution: constant
+    value: 15          
+  optimizer:
+    distribution: constant
+    value: "ADAM"             
+  network:
+    distribution: constant
+    value: "UB8" 
+  loss:
+    distribution: constant
+    value: "NP_NSNR"       
+  metric:
+    distribution: constant
+    value: "hrmae" 
+  window:
+    distribution: constant
+    value: 128 
+  step_tr:
+    distribution: constant
+    value: 128 
+  step_eval:
+    distribution: constant
+    value: 1            
+  img_size:
+    distribution: constant
+    value: 8 
+  batch_size:
+    distribution: constant
+    value: 8 
+  learning_rate:
+    distribution: constant
+    value: 0.00044
+  lambda_loss:
+    distribution: constant
+    value: 1.32   

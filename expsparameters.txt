@@ -1,0 +1,11 @@
+# Optional
+--only_data_manager # stops when finish to load the database_name
+--save_subjects_metadata # Save in .txt file the names of the subjects with the number of frames
+--overfit_exp # Experiment to overfit one single input (check if the network is capable to learn the task)
+--is_5050_validation # Experiment to train 50% and test in 50% only fold 0 and fold 1 available
+# Workstation
+* 2021-09-05: Test Datamanager only in VIPL
+python main.py --name_experiment PHYSNETb8e15_NPlr00001 --only_data_manager --load_dataset_path J:\faces\128_128\synchronized\VIPL_npy --save_path E:\results\VIPL\test_dataset --database_name VIPL --dataset_percentage 1 --network PHYSNET --n_epochs 15 --batch_size 4 --learning_rate 0.0001 --optimizer ADAM --loss NP --metric r --lambda_loss 1 --fold 0
+
+# COLAB
+!python deep_rppg/main.py --name_experiment NETb8e15_NPlr00001 --in_COLAB --only_data_manager --load_dataset_path /content/drive/MyDrive/Deivid/data --save_path /content/drive/MyDrive/Deivid/test --database_name VIPL --dataset_percentage 1 --save_subjects_metadata
